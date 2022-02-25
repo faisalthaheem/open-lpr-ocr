@@ -9,7 +9,9 @@ RUN DEBIAN_FRONTEND=noninteractive apt update && \
     mkdir -p /root/.EasyOCR/model
 
 RUN wget -O /root/.EasyOCR/model/english_g2.zip 'https://github.com/JaidedAI/EasyOCR/releases/download/v1.3/english_g2.zip' && \
-    unzip -d /root/.EasyOCR/model /root/.EasyOCR/model/english_g2.zip && rm /root/.EasyOCR/model/english_g2.zip
+    unzip -d /root/.EasyOCR/model /root/.EasyOCR/model/english_g2.zip && rm /root/.EasyOCR/model/english_g2.zip && \
+    wget -O /root/.EasyOCR/model/craft_mlt_25k.zip 'https://github.com/JaidedAI/EasyOCR/releases/download/pre-v1.1.6/craft_mlt_25k.zip' && \
+    unzip -d /root/.EasyOCR/model /root/.EasyOCR/model/craft_mlt_25k.zip && rm /root/.EasyOCR/model/craft_mlt_25k.zip
 
 RUN pip3 install --no-cache-dir \
     Events==0.4 \
